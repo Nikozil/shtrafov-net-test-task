@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { getFine } from '../../api/api';
 import Loader from '../../assets/Loader/Loader';
 import getHelpUin from '../../lib/getHelpUin';
@@ -7,30 +7,47 @@ import styles from '../../styles/CheckFine.module.scss';
 import FineFound from './FineFound';
 import FineNotFound from './FineNotFound';
 import Form from './Form';
+import { useRouter } from 'next/router';
 
 const CheckFine: NextPage = () => {
+  const router = useRouter();
+
   const [isStartSearch, setIsStartSearch] = useState<boolean>(false);
   const [status, setStatus] = useState<string | null>(null);
-  const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
   const [fine, setFine] = useState<Fine | null | false>(null);
   const [uin, setUin] = useState<UIN>('');
   const [helperUin, setHelperUin] = useState<HelperUIN>(null);
+
+  useEffect(() => {
+    const pathUin = router.query.uin;
+    if (typeof pathUin === 'string') {
+      setIsStartSearch(true);
+      setUin(pathUin);
+
+      pathUin.length === 25 || pathUin.length === 20
+        ? fetchFine(pathUin)
+        : setStatus('Количество символов должно быть 20 или 25');
+    } else {
+      setIsStartSearch(false);
+      setUin('');
+    }
+  }, [router]);
+
+  const fetchFine = async (uin: UIN) => {
+    setIsFetching(true);
+    let responce = await getFine(uin);
+    !responce && setStatus('Неверные данные');
+
+    setFine(responce);
+    setIsFetching(false);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsStartSearch(true);
     setFine(null);
-
-    const fetchFine = async () => {
-      setIsSearching(true);
-      let responce = await getFine(uin);
-      !responce && setStatus('Неверные данные');
-      setFine(responce);
-      setIsSearching(false);
-    };
-    uin.length === 25 || uin.length === 20
-      ? fetchFine()
-      : setStatus('Количество символов должно быть 20 или 25');
+    router.push({ query: { uin: uin } });
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -58,7 +75,7 @@ const CheckFine: NextPage = () => {
         handleHelpClick={handleHelpClick}
       />
       {isStartSearch ? (
-        isSearching ? (
+        isFetching ? (
           <Loader />
         ) : fine ? (
           <FineFound fine={fine} />
