@@ -4,6 +4,7 @@ import NotFoundImg from '../../assets/images/NotFound.svg';
 import getFineList from '../../lib/getFineList';
 import styles from '../../styles/FineFound.module.scss';
 import { Fine } from './CheckFine';
+import { uid } from 'react-uid';
 
 const FineFound: NextPage<Props> = ({ fine }) => {
   const list = getFineList(fine);
@@ -12,7 +13,7 @@ const FineFound: NextPage<Props> = ({ fine }) => {
       <span>Постановление #{fine.number}</span>
       <ul className={styles['fine-list']}>
         {list.map((item: PropsItem) => (
-          <Item name={item.name} value={item.value} key={item.name} />
+          <Item name={item.name} value={item.value} key={uid(item)} />
         ))}
       </ul>
     </div>
