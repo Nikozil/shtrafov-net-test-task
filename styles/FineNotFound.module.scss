@@ -1,0 +1,13 @@
+.loader {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loader__name {
+  margin-top: 24px;
+}
+
+.loader__spin {
+  size: 92px;
+}

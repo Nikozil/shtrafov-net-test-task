@@ -1,0 +1,26 @@
+.header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 37px;
+}
+.logo__icon {
+  size: 34px;
+}
+.logo__name {
+  margin-left: 10px;
+  font-family: 'GT Walsheim Pro';
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+.logo__name_bold {
+  font-family: 'GT Walsheim ProBold';
+  font-weight: 900;
+}
