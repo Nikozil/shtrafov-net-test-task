@@ -27,11 +27,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-//@ts-ignore
-export async function getStaticProps(context) {
-  console.log(context);
-
-  return {
-    props: {}, // will be passed to the page component as props
-  };
-}

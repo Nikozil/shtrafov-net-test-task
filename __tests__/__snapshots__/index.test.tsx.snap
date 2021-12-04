@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders homepage unchanged 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="wrapper"
+      >
+        <div
+          class="container"
+        >
+          <header
+            class="header"
+          >
+            <a
+              class="logo"
+              href="/"
+            >
+              Next image stub
+              <span
+                class="logo__name"
+              >
+                <span
+                  class="logo__name_bold"
+                >
+                  Штрафов
+                </span>
+                 нет
+              </span>
+            </a>
+          </header>
+          <main>
+            <div
+              class="content"
+            >
+              <div>
+                Получение информации о штрафе по УИН
+              </div>
+              <form
+                class="search-form"
+              >
+                <label
+                  class="search-form__label"
+                  for="UIN"
+                >
+                  Введите УИН
+                </label>
+                <input
+                  autocomplete="off"
+                  class="search-form__input"
+                  id="UIN"
+                  placeholder="Введите УИН"
+                  value=""
+                />
+                <button
+                  class="search-form__button"
+                >
+                  Найти
+                </button>
+              </form>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="wrapper"
+    >
+      <div
+        class="container"
+      >
+        <header
+          class="header"
+        >
+          <a
+            class="logo"
+            href="/"
+          >
+            Next image stub
+            <span
+              class="logo__name"
+            >
+              <span
+                class="logo__name_bold"
+              >
+                Штрафов
+              </span>
+               нет
+            </span>
+          </a>
+        </header>
+        <main>
+          <div
+            class="content"
+          >
+            <div>
+              Получение информации о штрафе по УИН
+            </div>
+            <form
+              class="search-form"
+            >
+              <label
+                class="search-form__label"
+                for="UIN"
+              >
+                Введите УИН
+              </label>
+              <input
+                autocomplete="off"
+                class="search-form__input"
+                id="UIN"
+                placeholder="Введите УИН"
+                value=""
+              />
+              <button
+                class="search-form__button"
+              >
+                Найти
+              </button>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
